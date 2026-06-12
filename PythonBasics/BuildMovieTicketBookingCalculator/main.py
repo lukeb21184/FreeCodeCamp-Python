@@ -1,4 +1,5 @@
 
+age = 21
 seat_type = 'Gold'
 show_time = 'Evening'
 if age > 17:
