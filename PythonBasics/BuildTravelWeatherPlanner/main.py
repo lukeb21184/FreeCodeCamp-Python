@@ -1,4 +1,4 @@
-
+distance_mi = 3
 is_raining = False
 has_bike = True
 has_car = False
