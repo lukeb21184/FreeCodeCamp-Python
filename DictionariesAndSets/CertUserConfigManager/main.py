@@ -41,3 +41,9 @@ def view_settings(settings):
         result += f"{key.capitalize()}: {value}\n"
 
     return result
+
+test_settings = {
+    "theme": "dark",
+    "notifications": "enabled",
+    "volume": "high"
+}
