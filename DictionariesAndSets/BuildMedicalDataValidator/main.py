@@ -1,4 +1,10 @@
- is_invalid = False
+def validate(data):
+    is_sequence = isinstance(data, (list, tuple))
+
+    if not is_sequence:
+        print('Invalid format: expected a list or tuple.')
+        return False
+is_invalid = False
     key_set = set(
         ['patient_id', 'age', 'gender', 'diagnosis', 'medications', 'last_visit_id']
     )
