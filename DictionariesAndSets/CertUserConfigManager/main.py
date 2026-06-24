@@ -20,3 +20,12 @@ def update_setting(settings, setting):
         return f"Setting '{key}' updated to '{value}' successfully!"
 
     return f"Setting '{key}' does not exist! Cannot update a non-existing setting."
+
+def delete_setting(settings, key):
+    key = key.lower()
+
+    if key in settings:
+        del settings[key]
+        return f"Setting '{key}' deleted successfully!"
+
+    return "Setting not found!"
