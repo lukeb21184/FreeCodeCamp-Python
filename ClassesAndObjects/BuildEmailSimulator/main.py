@@ -1,4 +1,8 @@
-
+    def read_email(self, index):
+        if not self.emails:
+            print('Inbox is empty.\n')
+            return
+            
     def read_email(self, index):
         if not self.emails:
             print("Inbox is empty.\n")
