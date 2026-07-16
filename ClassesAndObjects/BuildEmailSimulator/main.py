@@ -1,3 +1,10 @@
+class Inbox:
+    def __init__(self):
+        self.emails = []
+
+    def receive_email(self, email):
+        self.emails.append(email)
+
    def list_emails(self):
         if not self.emails:
             print("Your inbox is empty.\n")
@@ -7,7 +14,7 @@
         for i, email in enumerate(self.emails, start=1):
             print(f"{i}. {email}")
 
-def read_email(self, index):
+    def read_email(self, index):
         if not self.emails:
             print("Inbox is empty.\n")
             return
