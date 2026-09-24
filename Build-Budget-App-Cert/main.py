@@ -27,3 +27,11 @@ class Category:
     def __str__(self):
         title = f"{self.name:*^30}\n"
         items = ""
+        
+        for item in self.ledger:
+            desc = item["description"][:23]
+            amt = f"{item['amount']:.2f}"
+            items += f"{desc:<23}{amt:>7}\n"
+            
+        total = f"Total: {self.get_balance():.2f}"
+        return title + items + total
