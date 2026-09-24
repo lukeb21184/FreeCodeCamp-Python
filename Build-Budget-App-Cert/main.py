@@ -44,3 +44,22 @@ def create_spend_chart(categories):
             
         total = f"Total: {self.get_balance():.2f}"
         return title + items + total
+    if total_spent > 0:
+        percentages = [int((spent / total_spent) * 100) // 10 * 10 for spent in spent_per_category]
+    else:
+        percentages = [0 for _ in categories]
+        
+    chart = "Percentage spent by category\n"
+    for i in range(100, -1, -10):
+        chart += f"{i:>3}| "
+        for pct in percentages:
+            if pct >= i:
+                chart += "o  "
+            else:
+                chart += "   "
+        chart += "\n"
+        
+    chart += "    " + "-" * (len(categories) * 3 + 1) + "\n"
+    
+    names = [cat.name for cat in categories]
+    max_len = max(len(name) for name in names)
