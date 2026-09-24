@@ -63,3 +63,15 @@ def create_spend_chart(categories):
     
     names = [cat.name for cat in categories]
     max_len = max(len(name) for name in names)
+
+    for i in range(max_len):
+        chart += "     "
+        for name in names:
+            if i < len(name):
+                chart += f"{name[i]}  "
+            else:
+                chart += "   "
+        if i < max_len - 1:
+            chart += "\n"
+            
+    return chart
