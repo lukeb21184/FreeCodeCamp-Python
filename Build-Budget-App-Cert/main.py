@@ -32,6 +32,15 @@ class Category:
             desc = item["description"][:23]
             amt = f"{item['amount']:.2f}"
             items += f"{desc:<23}{amt:>7}\n"
+
+def create_spend_chart(categories):
+
+    spent_per_category = []
+    for cat in categories:
+        spent = sum(-item["amount"] for item in cat.ledger if item["amount"] < 0)
+        spent_per_category.append(spent)
+        
+    total_spent = sum(spent_per_category)
             
         total = f"Total: {self.get_balance():.2f}"
         return title + items + total
