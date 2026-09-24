@@ -20,3 +20,10 @@ class Category:
             category.deposit(amount, f"Transfer from {self.name}")
             return True
         return False
+        
+    def check_funds(self, amount):
+        return amount <= self.get_balance()
+
+    def __str__(self):
+        title = f"{self.name:*^30}\n"
+        items = ""
