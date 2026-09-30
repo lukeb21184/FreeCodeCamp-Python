@@ -40,8 +40,12 @@ class Employee:
             raise ValueError(f"Invalid value '{new_level}' for 'level' attribute.")
         if hasattr(self, '_level') and new_level == self.level:
             raise ValueError(f"'{self.level}' is already the selected level.")
+        if hasattr(self, '_level') and Employee._base_salaries[new_level] < Employee._base_salaries[self.level]:
+            raise ValueError("Cannot change to lower level.")
+        print(f"'{self.name}' promoted to '{new_level}'.")
+        self._salary = Employee._base_salaries[new_level]
         self._level = new_level
-    
+
     @property
     def salary(self):
         return self._salary
