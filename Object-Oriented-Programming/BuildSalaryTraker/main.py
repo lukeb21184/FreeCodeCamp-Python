@@ -38,7 +38,8 @@ class Employee:
             raise TypeError("'level' must be a string.")
         if new_level not in Employee._base_salaries:
             raise ValueError(f"Invalid value '{new_level}' for 'level' attribute.")
-        
+        if hasattr(self, '_level') and new_level == self.level:
+            raise ValueError(f"'{self.level}' is already the selected level.")
         self._level = new_level
     
     @property
