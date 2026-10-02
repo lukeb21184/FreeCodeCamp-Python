@@ -55,7 +55,7 @@ class Employee:
         if not isinstance(new_salary, (int, float)):
             raise TypeError("'salary' must be a number.")
         if hasattr(self, '_level') and new_salary < Employee._base_salaries[self.level]:
-            raise ValueError(f"Salary must be higher than minimum salary ${Employee._base_salaries[self.level]}.")
+            raise ValueError(f'Salary must be higher than minimum salary ${Employee._base_salaries[self.level]}.')
         self._salary = new_salary
         print(f'Salary updated to ${self.salary}.')
 
