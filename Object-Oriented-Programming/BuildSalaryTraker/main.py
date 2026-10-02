@@ -9,7 +9,7 @@ class Employee:
     def __init__(self, name, level):
         self.name = name
         self.level = level
-        self._salary = Employee._base_salaries[level]
+        self.salary = Employee._base_salaries[level]
 
     def __str__(self):
         return f'{self.name}: {self.level}'
