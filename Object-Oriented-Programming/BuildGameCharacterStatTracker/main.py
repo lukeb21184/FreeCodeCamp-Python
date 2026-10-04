@@ -44,3 +44,11 @@ class GameCharacter:
         self.health = 100
         self.mana = 50
         print(f"{self.name} leveled up to {self.level}!")
+
+    def __str__(self):
+        return (
+            f"Name: {self.name}\n"
+            f"Level: {self.level}\n"
+            f"Health: {self.health}\n"
+            f"Mana: {self.mana}"
+        )
