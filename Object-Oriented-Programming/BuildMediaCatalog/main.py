@@ -6,4 +6,7 @@ class Movie:
         self.duration = duration
 
     def __str__(self):
-        return f"{self.title} ({self.year}) - {self.duration} min, {self.director}"
+        return f'{self.title} ({self.year}) - {self.duration} min, {self.director}'
+
+movie1 = Movie("Inception", 2010, "Christopher Nolan", 148)
+print(movie1)
