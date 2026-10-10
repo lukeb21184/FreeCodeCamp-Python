@@ -21,6 +21,9 @@ class MediaCatalogue:
     def __init__(self):
         self.items = []
     
+    def add(self, media_item):
+        self.items.append(media_item)
+    
     
 
 try:
