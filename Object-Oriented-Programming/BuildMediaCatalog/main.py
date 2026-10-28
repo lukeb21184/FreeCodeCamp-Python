@@ -1,3 +1,6 @@
+class MediaError(Exception):
+    """Custom exception for media-related errors."""
+
 class Movie:
     """Parent class representing a movie."""
     
