@@ -1,4 +1,6 @@
 class Movie:
+    """Parent class representing a movie."""
+    
     def __init__(self, title, year, director, duration):
         if not title.strip():
             raise ValueError('Title cannot be empty')
@@ -30,7 +32,7 @@ class TVSeries(Movie):
         self.total_episodes = total_episodes
     
     def __str__(self):
-        return f'{self.title} ({self.year}) - {self.seasons} seasons, {self.total_episodes} episodes, {self.duration} min avg, {self.director}'  
+        return f'{self.title} ({self.year}) - {self.seasons} seasons, {self.total_episodes} episodes, {self.duration} min avg, {self.director}'
 
 class MediaCatalogue:
     def __init__(self):
@@ -58,7 +60,13 @@ try:
     catalogue.add(movie2)
     
     series1 = TVSeries('Scrubs', 2001, 'Bill Lawrence', 24, 9, 182)
+    catalogue.add(series1)
+    series2 = TVSeries('Breaking Bad', 2008, 'Vince Gilligan', 47, 5, 62)
+    catalogue.add(series2)
     
     print(catalogue)
 except ValueError as e:
     print(f'Validation Error: {e}')
+
+print(movie1.__doc__)
+print(series1.__doc__)
