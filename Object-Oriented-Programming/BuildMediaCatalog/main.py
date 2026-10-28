@@ -20,10 +20,12 @@ class Movie:
 class TVSeries(Movie):
     def __init__(self, title, year, director, duration, seasons, total_episodes):
         super().__init__(title, year, director, duration)
+        
         if seasons < 1:
             raise ValueError('Seasons must be 1 or greater')
         if total_episodes < 1:
             raise ValueError('Total episodes must be 1 or greater')
+        
         self.seasons = seasons
         self.total_episodes = total_episodes
 
@@ -51,6 +53,9 @@ try:
     catalogue.add(movie1)
     movie2 = Movie('Inception', 2010, 'Christopher Nolan', 148)
     catalogue.add(movie2)
+    series1 = TVSeries('Breaking Bad', 2008, 'Vince Gilligan', 47, 5, 62)
+    print(series1)
+
     print(catalogue)
 except ValueError as e:
     print(f'Validation Error: {e}')
