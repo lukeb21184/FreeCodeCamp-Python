@@ -13,5 +13,9 @@ class DiscountStrategy(ABC):
     def is_applicable(self, product: Product, user_tier: str) -> bool:
         pass
 
+    @abstractmethod
+    def apply_discount(self, product: Product) -> float:
+        pass
+
 product = Product('Wireless Mouse', 50.0)
 print(product)
