@@ -27,6 +27,10 @@ class PercentageDiscount(DiscountStrategy):
     def apply_discount(self, product: Product) -> float:
         return product.price * (1 - self.percent / 100)
 
+class FixedAmountDiscount(DiscountStrategy):
+    def __init__(self, amount: int) -> None:
+        self.amount = amount
+
 product = Product('Wireless Mouse', 50.0)
 print(product)
 
