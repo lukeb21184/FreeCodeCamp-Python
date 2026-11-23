@@ -37,6 +37,9 @@ class FixedAmountDiscount(DiscountStrategy):
     def apply_discount(self, product: Product) -> float:
         return product.price - self.amount
 
+class PremiumUserDiscount(DiscountStrategy):
+    pass
+
 product = Product('Wireless Mouse', 50.0)
 print(product)
 
