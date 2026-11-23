@@ -42,3 +42,6 @@ print(product)
 
 discount = PercentageDiscount(10)
 print(discount.apply_discount(product))
+
+fixed_discount = FixedAmountDiscount(5)
+print(fixed_discount.apply_discount(product))
