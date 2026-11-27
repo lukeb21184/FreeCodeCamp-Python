@@ -42,7 +42,9 @@ class PremiumUserDiscount(DiscountStrategy):
         return user_tier.lower() == 'premium'
 
     def apply_discount(self, product: Product) -> float:
-        return product.price * 0.8    
+        return product.price * 0.8
+
+
 
 product = Product('Wireless Mouse', 50.0)
 print(product)
