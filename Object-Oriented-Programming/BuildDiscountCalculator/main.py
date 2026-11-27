@@ -50,7 +50,6 @@ class DiscountEngine:
 
     def calculate_best_price(self, product: Product, user_tier: str) -> float:
         prices = [product.price]
-        prices = [product.price]
 
 product = Product('Wireless Mouse', 50.0)
 print(product)
